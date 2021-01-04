@@ -1,18 +1,17 @@
-// // http://obvcode.blogspot.com/2008/05/strtr-for-javascript.html
-// function strtr(str, from, to) {
-//   var subst;
-//   for (i = 0; i < from.length; i++) {
-//       subst = (to[i]) ? to[i] : to[to.length-1];
-//       str = str.replace(new RegExp(str[str.indexOf(from[i])], 'g'), subst);
-//   }
-//   return str;
-// }
-
-// const from = " ()!$'?:,&+-\*/¥µÀÁÂÃÄÅÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝàáâãäåçèéêëìíîïðñòóôõöøùúûüýÿ";
-// const to = "---------------YuAAAAAACEEEEIIIIDNOOOOOOUUUUYaaaaaaceeeeiiiionoooooouuuuyy";
-
 const prettyUrl = (str) => {
-  return str + 'a';
+  return str
+    .toLowerCase()
+    .replace(/[ =.><\[\]{}()!$'?:;,&+*/\\]/gi, '-')
+    .replace(/[àáâãäå]/gi, 'a')
+    .replace(/[ç]/gi, 'c')
+    .replace(/[èéêë]/gi, 'e')
+    .replace(/[ìíîï]/gi, 'i')
+    .replace(/[ñń]/gi, 'n')
+    .replace(/[òóôõöø]/gi, 'o')
+    .replace(/[ùúûü]/gi, 'u')
+    .replace(/[ýÿ]/gi, 'y')
+    .replace(/\-{1,}/gi, '-')
+  ;
 }
 
 export default prettyUrl;
