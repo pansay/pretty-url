@@ -2,7 +2,7 @@
   "name": "svelte-app",
   "version": "1.0.0",
   "scripts": {
-    "build": "rollup -c && cp -r public/ docs/ && sed -i '' \"s/='\\//='/g\" public/index.html",
+    "build": "rollup -c && cp -r public/ docs/ && sed -i '' \"s/='\\//='/g\" docs/index.html",
     "dev": "rollup -c -w",
     "start": "sirv public"
   },
