@@ -1,7 +1,7 @@
 const prettyUrl = (str) => {
   return str
     .toLowerCase()
-    .replace(/[ =.><\[\]{}()!$'?:;,&+*/\\]/gi, '-')
+    .replace(/[ =.><\[\]{}()!$'?:;,&+*’/\\]/gi, '-')
     .replace(/[àáâãäå]/gi, 'a')
     .replace(/[ç]/gi, 'c')
     .replace(/[èéêë]/gi, 'e')
